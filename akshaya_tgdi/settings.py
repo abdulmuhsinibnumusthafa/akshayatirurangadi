@@ -126,7 +126,7 @@ STATICFILES_DIRS = [
 ]
 import os
 
-ALLOWED_HOSTS = ['*']  # change later
+ALLOWED_HOSTS = ['akshayatirurangadi.onrender.com']  # change later
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
