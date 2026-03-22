@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block title %}About Akshaya Centre Tirurangadi - Empowering Kerala Digitally{% endblock %}
+
+{% block content %}
+
+<!-- ABOUT HERO / INTRO -->
+<section class="relative mt-8">
+    <div class="glass rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-black/40 text-center max-w-5xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            About Akshaya Centre Tirurangadi
+        </h1>
+        <p class="text-xl md:text-2xl text-[var(--text-secondary)] max-w-4xl mx-auto leading-relaxed">
+            Your local gateway to Kerala’s flagship e-governance initiative — delivering transparent, efficient, and citizen-centric digital services.
+        </p>
+    </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="mt-16 md:mt-20">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16">
+
+        <!-- Left: Description + History Snippet -->
+        <div class="space-y-10">
+            <div class="glass rounded-3xl p-8 md:p-10">
+                <h2 class="text-3xl font-bold mb-6 text-[var(--accent)]">What is Akshaya?</h2>
+                <p class="text-[var(--text-secondary)] leading-relaxed text-lg">
+                    Akshaya is a pioneering e-governance project launched by the Government of Kerala in 2002 — the first of its kind in India to achieve mass digital empowerment. 
+                    Starting as an e-literacy initiative in Malappuram, it has grown into a statewide network of centres that bridge the digital divide.
+                </p>
+                <p class="mt-4 text-[var(--text-secondary)] leading-relaxed">
+                    Today, Akshaya Centres serve as multi-purpose hubs delivering Government-to-Citizen (G2C) services, financial inclusion, skill development, and more — right at the community level.
+                </p>
+            </div>
+
+            <div class="glass rounded-3xl p-8 md:p-10">
+                <h2 class="text-3xl font-bold mb-6 text-[var(--accent)]">Our Role in Tirurangadi</h2>
+                <p class="text-[var(--text-secondary)] leading-relaxed text-lg">
+                    At Akshaya Centre Tirurangadi, we bring these services closer to you — making government procedures faster, more accessible, and hassle-free. 
+                    From certificates and payments to online applications and digital assistance, we’re here to empower every citizen in our locality.
+                </p>
+            </div>
+        </div>
+
+        <!-- Right: Vision + Mission + Values -->
+        <div class="space-y-8">
+
+            <!-- Vision -->
+            <div class="glass rounded-3xl p-8 md:p-10 hover:scale-[1.02] transition-all duration-300">
+                <div class="flex items-center gap-4 mb-4">
+                    <i data-feather="eye" class="text-[var(--accent)] text-3xl"></i>
+                    <h2 class="text-2xl md:text-3xl font-bold">Vision</h2>
+                </div>
+                <p class="text-[var(--text-secondary)] leading-relaxed text-lg">
+                    Achieving 100% digital and social inclusion by ‘Connecting the Unconnected’.
+                </p>
+                <ul class="mt-4 space-y-2 text-[var(--text-secondary)]">
+                    <li>• Improve services at the base of the delivery chain</li>
+                    <li>• Build collaborative relationships with citizens and communities</li>
+                    <li>• Leverage government assets to enhance mission productivity</li>
+                </ul>
+            </div>
+
+            <!-- Mission -->
+            <div class="glass rounded-3xl p-8 md:p-10 hover:scale-[1.02] transition-all duration-300">
+                <div class="flex items-center gap-4 mb-4">
+                    <i data-feather="target" class="text-[var(--accent)] text-3xl"></i>
+                    <h2 class="text-2xl md:text-3xl font-bold">Mission</h2>
+                </div>
+                <p class="text-[var(--text-secondary)] leading-relaxed text-lg">
+                    To bridge the gap between the ‘Information Rich and the Information Poor’ — transforming governance to provide efficient, transparent, and convenient services to citizens through Information & Communication Technologies.
+                </p>
+                <ul class="mt-4 space-y-2 text-[var(--text-secondary)]">
+                    <li>• Make services accessible to the common man in their locality</li>
+                    <li>• Improve public service delivery and e-literacy</li>
+                    <li>• Act as agents of change for socio-economic development</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CALL TO ACTION / FOOTER BANNER -->
+<section class="mt-20">
+    <div class="glass rounded-3xl p-10 md:p-14 text-center">
+        <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Ready to Experience Hassle-Free Digital Services?
+        </h3>
+        <p class="text-[var(--text-secondary)] text-lg mb-8 max-w-3xl mx-auto">
+            Visit us at Akshaya Centre Tirurangadi or reach out — we're here to assist you every step of the way.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="/services/"
+               class="inline-flex items-center px-8 py-4 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white font-medium rounded-xl shadow-lg transition-all hover:shadow-xl hover:-translate-y-1">
+                Explore Our Services
+            </a>
+            <a href="/contact/"
+               class="inline-flex items-center px-8 py-4 border-2 border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white font-medium rounded-xl transition-all">
+                Contact Us Today
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

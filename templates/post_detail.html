@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="max-w-4xl mx-auto">
+
+    <!-- TITLE -->
+    <h1 class="text-3xl font-bold text-white">
+        {{ post.title }}
+    </h1>
+
+    <!-- META INFO -->
+    <div class="text-gray-500 text-sm mb-6">
+        📅 {{ post.created_at|date:"F d, Y" }}
+    </div>
+
+    <!-- IMAGE -->
+    {% if post.image %}
+    <div class="mb-6">
+        <img src="{{ post.image.url }}" class="w-full rounded-xl shadow-lg">
+    </div>
+    {% endif %}
+
+    <!-- CONTENT -->
+    <div class="bg-white/60 backdrop-blur-lg p-6 rounded-xl shadow leading-relaxed text-gray-700 text-lg">
+        {{ post.content|linebreaks }}
+    </div>
+
+    <!-- BACK BUTTON -->
+    <div class="mt-6">
+        <a href="/announcements/" 
+           class="inline-block mt-2 bg-blue-600 px-4 py-1 rounded text-sm">
+           ← Back to Announcements
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}

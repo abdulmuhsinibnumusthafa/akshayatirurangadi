@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="relative overflow-hidden">
+    <div class="glass rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-black/40">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+            <!-- Text Content -->
+            <div class="space-y-6">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+                    Akshaya Centre<br>Tirurangadi
+                </h1>
+
+                <p class="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-2xl">
+                    Your trusted gateway to Kerala Government’s e-services — fast, transparent, and accessible to all citizens.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="/services/"
+                       class="inline-flex items-center px-7 py-3.5 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white font-medium rounded-xl shadow-lg shadow-blue-900/30 transition-all hover:shadow-xl hover:-translate-y-0.5">
+                        Explore Services
+                    </a>
+                    <a href="/contact/"
+                       class="inline-flex items-center px-7 py-3.5 border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white font-medium rounded-xl transition-all hover:shadow-lg">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="relative">
+                <div class="absolute inset-0 bg-gradient-to-tr from-[var(--bg-primary)]/40 to-transparent rounded-2xl"></div>
+                <img src="/static/images/hero.jpg"
+                     alt="Akshaya Centre Tirurangadi - Serving Citizens"
+                     class="rounded-2xl shadow-2xl object-cover w-full h-full max-h-[500px] lg:max-h-none">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ABOUT / VALUES SECTION -->
+<section class="mt-16 md:mt-20">
+    <div class="glass rounded-3xl p-8 md:p-12 shadow-xl">
+
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold">About Akshaya Centre</h2>
+            <p class="mt-4 text-[var(--text-secondary)] text-lg">
+                As part of Kerala’s flagship e-governance initiative, we bring government services closer to you — anytime, anywhere.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+            <div class="glass-hover p-6 rounded-2xl transition-all duration-300 hover:scale-[1.03] hover:shadow-lg">
+                <h3 class="text-xl font-semibold mb-3 text-[var(--accent)]">Digital Inclusion</h3>
+                <p class="text-[var(--text-secondary)]">
+                    Bridging the digital divide by making online services available to every citizen, regardless of location or tech-savviness.
+                </p>
+            </div>
+
+            <div class="glass-hover p-6 rounded-2xl transition-all duration-300 hover:scale-[1.03] hover:shadow-lg">
+                <h3 class="text-xl font-semibold mb-3 text-[var(--accent)]">Transparency</h3>
+                <p class="text-[var(--text-secondary)]">
+                    Every transaction is tracked and verifiable — building trust through clear processes and real-time updates.
+                </p>
+            </div>
+
+            <div class="glass-hover p-6 rounded-2xl transition-all duration-300 hover:scale-[1.03] hover:shadow-lg">
+                <h3 class="text-xl font-semibold mb-3 text-[var(--accent)]">Efficiency</h3>
+                <p class="text-[var(--text-secondary)]">
+                    Quick service delivery with minimal waiting time — powered by trained staff and modern digital infrastructure.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<h2 class="text-3xl md:text-4xl font-bold text-center mt-10 mb-10">Latest Announcements</h2>
+
+<div class="grid md:grid-cols-3 gap-6">
+
+{% for post in announcements %}
+<div class="bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden">
+
+    {% if post.image %}
+    <img src="{{ post.image.url }}" class="w-full h-48 object-cover object-top">
+    {% endif %}
+
+    <div class="p-4">
+        <h3 class="font-semibold">{{ post.title }}</h3>
+
+        <a href="/post/{{ post.id }}/"
+           class="inline-block mt-3 bg-blue-600 px-4 py-1 rounded text-sm">
+           Read More
+        </a>
+    </div>
+
+</div>
+{% endfor %}
+
+</div>
+
+{% endblock %}

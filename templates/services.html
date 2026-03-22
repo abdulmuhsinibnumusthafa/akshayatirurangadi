@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block title %}Our Services - Akshaya Centre Tirurangadi{% endblock %}
+
+{% block content %}
+
+<!-- SERVICES HEADER -->
+<section class="mt-8 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
+    <p class="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
+        At Akshaya Centre Tirurangadi, we provide a wide range of government and citizen-centric digital services — fast, reliable, and right in your neighbourhood.
+    </p>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="mt-12 md:mt-16">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+        <!-- Aadhaar Services -->
+        <div class="glass rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:shadow-xl group">
+            <div class="aspect-[4/3] overflow-hidden">
+                <img src="/static/images/aadhar.jpg"
+                     alt="Aadhaar Enrollment and Updation at Akshaya Centre"
+                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-[var(--accent)]">Aadhaar Services</h3>
+                <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
+                    New enrollment, biometric updates, name/address changes, mobile/email linking, and print services.
+                </p>
+            </div>
+        </div>
+
+        <!-- Passport Services -->
+        <div class="glass rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:shadow-xl group">
+            <div class="aspect-[4/3] overflow-hidden">
+                <img src="/static/images/passport.jpg"
+                     alt="Passport Application Assistance at Akshaya"
+                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-[var(--accent)]">Passport Services</h3>
+                <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
+                    Fresh passport applications, renewals, tatkaal, PCC, form filling, photo upload, and fee payment.
+                </p>
+            </div>
+        </div>
+
+        <!-- Bill Payments -->
+        <div class="glass rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:shadow-xl group">
+            <div class="aspect-[4/3] overflow-hidden">
+                <img src="/static/images/bill.jpg"
+                     alt="Utility Bill Payments at Akshaya Centre"
+                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-[var(--accent)]">Utility Bill Payments</h3>
+                <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
+                    Pay KSEB electricity, Kerala Water Authority, BSNL, mobile recharges, FASTag, insurance premiums, and more.
+                </p>
+            </div>
+        </div>
+
+        <!-- Ration Card Services -->
+        <div class="glass rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:shadow-xl group">
+            <div class="aspect-[4/3] overflow-hidden">
+                <img src="/static/images/ration.jpg"
+                     alt="Utility Bill Payments at Akshaya Centre"
+                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-[var(--accent)]">Ration Card Services</h3>
+                <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
+                    New applications, name additions/deletions, address changes, priority card, and related certificates.
+                </p>
+            </div>
+        </div>
+
+        <!-- e-District / Certificates -->
+        <div class="glass rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:shadow-xl group">
+            <div class="aspect-[4/3] overflow-hidden">
+                <img src="/static/images/ed.jpg"
+                     alt="Utility Bill Payments at Akshaya Centre"
+                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-[var(--accent)]">e-District & Certificates</h3>
+                <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
+                    Income, nativity, residence, community, dependency, non-creamy layer, and other village office certificates.
+                </p>
+            </div>
+        </div>
+
+        <!-- Other Popular Services -->
+        <div class="glass rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:shadow-xl group">
+            <div class="aspect-[4/3] overflow-hidden">
+                <img src="/static/images/vopa.jpg"
+                     alt="Utility Bill Payments at Akshaya Centre"
+                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-[var(--accent)]">More Services</h3>
+                <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
+                    Voter ID updates, PAN card applications, insurance (health/motor), scholarships, Jeevan Pramaan, police e-payments, and CSC services.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="mt-16 md:mt-20 text-center">
+    <div class="glass rounded-3xl p-10 md:p-14 max-w-4xl mx-auto">
+        <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Need Help with Any Service?
+        </h3>
+        <p class="text-[var(--text-secondary)] text-lg mb-8">
+            Visit our centre or contact us — our team is ready to assist you quickly and efficiently.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="/contact/"
+               class="inline-flex items-center px-8 py-4 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white font-medium rounded-xl shadow-lg transition-all hover:shadow-xl hover:-translate-y-1">
+                Contact Us Now
+            </a>
+            <a href="/announcements/"
+               class="inline-flex items-center px-8 py-4 border-2 border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white font-medium rounded-xl transition-all">
+                Check Latest Updates →
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

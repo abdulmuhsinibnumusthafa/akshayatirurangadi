@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us - Akshaya Centre Tirurangadi{% endblock %}
+
+{% block content %}
+
+<!-- CONTACT HEADER -->
+<section class="mt-8 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Get in Touch</h1>
+    <p class="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto">
+        We're here to assist you with any service or query. Reach out — our team is ready to help!
+    </p>
+</section>
+
+<!-- MAIN CONTACT SECTION -->
+<section class="mt-12 md:mt-16">
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+
+        <!-- Contact Info Card -->
+        <div class="glass rounded-3xl p-8 md:p-10 shadow-xl flex flex-col justify-between">
+            <div>
+                <h2 class="text-3xl font-bold mb-6 text-[var(--accent)]">{{ contact.center_name|default:"Akshaya Centre Tirurangadi" }}</h2>
+
+                <div class="space-y-5 text-lg">
+                    <div class="flex items-start gap-4">
+                        <i data-feather="map-pin" class="text-[var(--accent)] mt-1 text-2xl flex-shrink-0"></i>
+                        <p class="text-[var(--text-secondary)] leading-relaxed">
+                            {{ contact.address|default:"NK Road, Tirurangadi PO, Malappuram, Kerala - 676306" }}
+                        </p>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <i data-feather="phone" class="text-[var(--accent)] text-2xl flex-shrink-0"></i>
+                        <a href="tel:{{ contact.phone }}" class="hover:text-[var(--accent-hover)] transition">
+                            {{ contact.phone|default:"0494 XXX XXXX" }}
+                        </a>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <i data-feather="mail" class="text-[var(--accent)] text-2xl flex-shrink-0"></i>
+                        <a href="mailto:{{ contact.email }}" class="hover:text-[var(--accent-hover)] transition break-all">
+                            {{ contact.email|default:"akshaya.tirurangadi@gmail.com" }}
+                        </a>
+                    </div>
+
+                    {% if contact.whatsapp_number %}
+                    <div class="flex items-center gap-4">
+                        <i data-feather="message-circle" class="text-[var(--accent)] text-2xl flex-shrink-0"></i>
+                        <a href="https://wa.me/{{ contact.whatsapp_number }}" class="hover:text-green-400 transition">
+                            WhatsApp: {{ contact.whatsapp_number }}
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="mt-10 flex flex-wrap gap-4">
+                {% if contact.whatsapp_number %}
+                <a href="https://wa.me/{{ contact.whatsapp_number }}"
+                   class="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-xl shadow-lg transition-all hover:shadow-xl hover:-translate-y-0.5">
+                    <i data-feather="message-circle" class="mr-2"></i> Chat on WhatsApp
+                </a>
+                {% endif %}
+
+                <a href="tel:{{ contact.phone }}"
+                   class="inline-flex items-center px-6 py-3 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white font-medium rounded-xl shadow-lg transition-all hover:shadow-xl hover:-translate-y-0.5">
+                    <i data-feather="phone" class="mr-2"></i> Call Us Now
+                </a>
+
+                <a href="mailto:{{ contact.email }}"
+                   class="inline-flex items-center px-6 py-3 border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white font-medium rounded-xl transition-all">
+                    <i data-feather="mail" class="mr-2"></i> Send Email
+                </a>
+            </div>
+        </div>
+
+        <!-- Google Map -->
+        <div class="rounded-3xl overflow-hidden shadow-2xl h-full min-h-[400px] lg:min-h-full">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.5!2d75.923!3d11.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65938563c2a5d%3A0xsomeid!2sTirurangadi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1690000000000"
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Akshaya Centre Tirurangadi Location">
+            </iframe>
+        </div>
+
+    </div>
+</section>
+
+<!-- SOCIAL & VISIT INFO -->
+<section class="mt-16 text-center">
+    <div class="glass rounded-3xl p-8 md:p-12 max-w-4xl mx-auto">
+        <h3 class="text-2xl font-bold mb-6">Follow Us & Visit</h3>
+        <p class="text-[var(--text-secondary)] mb-8 text-lg">
+            We're open during working hours. Feel free to drop by or connect online!
+        </p>
+
+        <div class="flex justify-center gap-8 text-3xl">
+            <a href="https://wa.me/{{ contact.whatsapp_number|default:'919876543210' }}" class="hover:text-green-400 transition" aria-label="WhatsApp">
+                <i data-feather="message-circle"></i>
+            </a>
+            <a href="tel:{{ contact.phone }}" class="hover:text-[var(--accent)] transition" aria-label="Phone">
+                <i data-feather="phone"></i>
+            </a>
+            <a href="https://www.instagram.com/akshaya__tirurangadi/" class="hover:text-pink-400 transition" aria-label="Instagram">
+                <i data-feather="instagram"></i>
+            </a>
+            <a href="mailto:{{ contact.email }}" class="hover:text-[var(--accent)] transition" aria-label="Email">
+                <i data-feather="mail"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+    feather.replace();
+</script>
+
+{% endblock %}
