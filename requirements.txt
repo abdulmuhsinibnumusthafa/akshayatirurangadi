@@ -1,15 +1,5 @@
-asgiref==3.8.1
-cmake==3.31.6
 Django==5.1.7
-dlib @ file:///C:/Users/ABDUL%20MUHSIN%20P%20K/Downloads/#sha256=6f1a5ee167975d7952b28e0ce4495f1d9a77644761cf5720fb66d7c6188ae496
-dnspython==2.7.0
 gunicorn==25.1.0
-numpy==2.2.3
-opencv-python==4.11.0.86
-packaging==26.0
-pillow==11.1.0
-psycopg2-binary==2.9.11
-pymongo==4.11.2
-sqlparse==0.5.3
-tzdata==2025.1
 whitenoise==6.12.0
+psycopg2-binary==2.9.11
+pillow==11.1.0
