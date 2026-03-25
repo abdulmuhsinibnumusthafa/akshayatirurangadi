@@ -1,61 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akshaya Centre</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{% block title %}Akshaya Centre Tirurangadi{% endblock %}</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
         body {
             background: linear-gradient(135deg, #1e293b, #334155, #475569);
-        }
-        :root {
-            --bg-primary: #0b132b;
-            --bg-secondary: #1b263b;
-            --bg-glass: rgba(27, 38, 59, 0.65);
-            --border: rgba(255, 255, 255, 0.09);
-            --text-primary: #e2e8f0;
-            --text-secondary: #94a3b8;
-            --accent: #60a5fa;
-            --accent-hover: #3b82f6;
-        }
-
-        body {
             font-family: 'Inter', system-ui, sans-serif;
-            @apply bg-[var(--bg-primary)] text-[var(--text-primary)] min-h-screen antialiased;
+            min-height: 100vh;
+            color: #e2e8f0;
         }
 
         .glass {
-            background: var(--bg-glass);
+            background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--border);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .glass-hover:hover {
-            background: rgba(27, 38, 59, 0.85);
-            border-color: rgba(96, 165, 250, 0.25);
-        }
-
-        a {
-            @apply transition-colors duration-200;
-        }
-
-        a:hover {
-            color: var(--accent-hover);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(96, 165, 250, 0.3);
         }
     </style>
 </head>
 
-<body class="text-white">
+<body>
 
-<!-- NAVBAR -->
+    <!-- NAVBAR -->
     <header class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
-        <nav class="glass mt-3 mx-4 md:mx-6 lg:mx-8 rounded-2xl shadow-2xl shadow-black/50">
+        <nav class="glass mt-3 mx-4 md:mx-6 lg:mx-8 rounded-2xl shadow-2xl">
             <div class="container mx-auto px-5 py-3.5 flex items-center justify-between">
 
                 <!-- Logo -->
@@ -66,15 +50,17 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-                    <a href="/"          class="hover:text-[var(--accent)]">Home</a>
-                    <a href="/about/"    class="hover:text-[var(--accent)]">About</a>
-                    <a href="/services/" class="hover:text-[var(--accent)]">Services</a>
-                    <a href="/announcements/" class="hover:text-[var(--accent)]">News</a>
-                    <a href="/contact/"  class="hover:text-[var(--accent)]">Contact</a>
+                    <a href="/"          class="hover:text-blue-400 transition">Home</a>
+                    <a href="/about/"    class="hover:text-blue-400 transition">About</a>
+                    <a href="/services/" class="hover:text-blue-400 transition">Services</a>
+                    <a href="/announcements/" class="hover:text-blue-400 transition">News</a>
+                    <a href="/contact/"  class="hover:text-blue-400 transition">Contact</a>
                 </div>
 
                 <!-- Mobile Hamburger -->
-                <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none text-[var(--text-primary)]" aria-label="Toggle menu">
+                <button id="menu-toggle" 
+                        class="md:hidden text-3xl focus:outline-none" 
+                        aria-label="Toggle menu">
                     <i data-feather="menu"></i>
                 </button>
 
@@ -83,35 +69,34 @@
 
         <!-- Mobile Slide-in Menu -->
         <div id="mobile-menu"
-             class="fixed inset-y-0 right-0 z-50 w-72 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+             class="fixed inset-y-0 right-0 z-[60] w-72 translate-x-full transition-transform duration-300 ease-in-out md:hidden">
             <div class="glass h-full flex flex-col shadow-2xl">
-                <div class="p-5 flex justify-between items-center border-b border-[var(--border)]">
+                <div class="p-5 flex justify-between items-center border-b border-white/20">
                     <span class="font-semibold text-lg">Menu</span>
-                    <button id="menu-close" class="text-2xl focus:outline-none text-[var(--text-primary)]">
+                    <button id="menu-close" class="text-3xl focus:outline-none">
                         <i data-feather="x"></i>
                     </button>
                 </div>
                 <nav class="flex flex-col p-5 gap-4 text-lg font-medium">
-                    <a href="/"          class="py-2.5 hover:text-[var(--accent)] transition">Home</a>
-                    <a href="/about/"    class="py-2.5 hover:text-[var(--accent)] transition">About</a>
-                    <a href="/services/" class="py-2.5 hover:text-[var(--accent)] transition">Services</a>
-                    <a href="/announcements/" class="py-2.5 hover:text-[var(--accent)] transition">News</a>
-                    <a href="/contact/"  class="py-2.5 hover:text-[var(--accent)] transition">Contact</a>
+                    <a href="/"          class="py-3 hover:text-blue-400 transition">Home</a>
+                    <a href="/about/"    class="py-3 hover:text-blue-400 transition">About</a>
+                    <a href="/services/" class="py-3 hover:text-blue-400 transition">Services</a>
+                    <a href="/announcements/" class="py-3 hover:text-blue-400 transition">News</a>
+                    <a href="/contact/"  class="py-3 hover:text-blue-400 transition">Contact</a>
                 </nav>
             </div>
         </div>
     </header>
 
-<div class="container mx-auto px-4 mt-24">
-    {% block content %}{% endblock %}
-</div>
+    <!-- Main Content -->
+    <main class="pt-24 pb-12">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
 
-<!-- FOOTER -->
-<footer class="mt-16">
-
-    <!-- Bottom -->
-<!-- FOOTER -->
-    <footer class="glass border-t border-[var(--border)] mt-auto">
+    <!-- FOOTER -->
+    <footer class="glass border-t border-white/20 mt-auto">
         <div class="container mx-auto px-5 py-12 md:py-16">
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6">
@@ -119,7 +104,7 @@
                 <!-- Brand -->
                 <div>
                     <img src="/static/images/logo.png" alt="Akshaya" class="h-11 mb-4">
-                    <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
+                    <p class="text-gray-300 text-sm leading-relaxed">
                         Digital Service Centre under Akshaya Project<br>
                         Empowering citizens through accessible e-services.
                     </p>
@@ -127,31 +112,31 @@
 
                 <!-- Quick Links -->
                 <div>
-                    <h3 class="font-semibold mb-4 text-[var(--text-primary)]">Quick Links</h3>
-                    <ul class="space-y-2.5 text-sm text-[var(--text-secondary)]">
-                        <li><a href="/" class="hover:text-[var(--accent)] transition">Home</a></li>
-                        <li><a href="/about/" class="hover:text-[var(--accent)] transition">About Us</a></li>
-                        <li><a href="/services/" class="hover:text-[var(--accent)] transition">Our Services</a></li>
-                        <li><a href="/announcements/" class="hover:text-[var(--accent)] transition">Latest News</a></li>
-                        <li><a href="/contact/" class="hover:text-[var(--accent)] transition">Get in Touch</a></li>
+                    <h3 class="font-semibold mb-4 text-white">Quick Links</h3>
+                    <ul class="space-y-2.5 text-sm text-gray-300">
+                        <li><a href="/" class="hover:text-blue-400 transition">Home</a></li>
+                        <li><a href="/about/" class="hover:text-blue-400 transition">About Us</a></li>
+                        <li><a href="/services/" class="hover:text-blue-400 transition">Our Services</a></li>
+                        <li><a href="/announcements/" class="hover:text-blue-400 transition">Latest News</a></li>
+                        <li><a href="/contact/" class="hover:text-blue-400 transition">Get in Touch</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact & Social -->
                 <div>
-                    <h3 class="font-semibold mb-4 text-[var(--text-primary)]">Connect With Us</h3>
-                    <p class="text-[var(--text-secondary)] text-sm mb-3">
+                    <h3 class="font-semibold mb-4 text-white">Connect With Us</h3>
+                    <p class="text-gray-300 text-sm mb-3">
                         Email: {{ contact.email|default:"info@akshaya.tirurangadi" }}
                     </p>
 
-                    <div class="flex gap-6 mt-5">
-                        <a href="https://wa.me/{{ contact.whatsapp_number }}" class="text-2xl hover:text-green-400 transition" aria-label="WhatsApp">
+                    <div class="flex gap-6 mt-5 text-2xl">
+                        <a href="https://wa.me/{{ contact.whatsapp_number }}" class="hover:text-green-400 transition" aria-label="WhatsApp">
                             <i data-feather="message-circle"></i>
                         </a>
-                        <a href="tel:{{ contact.phone }}" class="text-2xl hover:text-[var(--accent)] transition" aria-label="Phone">
+                        <a href="tel:{{ contact.phone }}" class="hover:text-blue-400 transition" aria-label="Phone">
                             <i data-feather="phone"></i>
                         </a>
-                        <a href="https://www.instagram.com/akshaya__tirurangadi/" class="text-2xl hover:text-pink-400 transition" aria-label="Instagram">
+                        <a href="https://www.instagram.com/akshaya__tirurangadi/" class="hover:text-pink-400 transition" aria-label="Instagram">
                             <i data-feather="instagram"></i>
                         </a>
                     </div>
@@ -159,39 +144,38 @@
 
             </div>
 
-            <div class="mt-12 pt-8 border-t border-[var(--border)] text-center text-sm text-[var(--text-secondary)]">
+            <div class="mt-12 pt-8 border-t border-white/20 text-center text-sm text-gray-400">
                 © {{ 'now'|date:"Y" }} Akshaya Centre – Tirurangadi • All rights reserved.
             </div>
 
         </div>
     </footer>
 
-<script>
-    feather.replace();
+    <script>
+        feather.replace();
 
-    document.getElementById("menuBtn").onclick = () => {
-        document.getElementById("mobileMenu").classList.toggle("hidden");
-    }
-    feather.replace();
+        // Mobile Menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose   = document.getElementById('menu-close');
+        const mobileMenu  = document.getElementById('mobile-menu');
 
-        const toggle = document.getElementById('menu-toggle');
-        const closeBtn = document.getElementById('menu-close');
-        const menu = document.getElementById('mobile-menu');
+        if (menuToggle && menuClose && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full');
+            });
 
-        toggle.addEventListener('click', () => {
-            menu.classList.remove('translate-x-full');
-        });
+            menuClose.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
 
-        closeBtn.addEventListener('click', () => {
-            menu.classList.add('translate-x-full');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!menu.contains(e.target) && !toggle.contains(e.target)) {
-                menu.classList.add('translate-x-full');
-            }
-        });
-</script>
+            // Close when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                    mobileMenu.classList.add('translate-x-full');
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>
